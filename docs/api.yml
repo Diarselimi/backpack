@@ -46,6 +46,26 @@ paths:
                                 $ref: '#/components/schemas/login'
                 '400':
                     description: 'Invalid data'
+    /notebooks:
+        post:
+            summary: Create a new notebook
+            description: This will enable you to create new notebooks, where you can add questions and save notes.
+            operationId: createNotebook
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/notebook'
+                required: true
+            responses:
+                '200':
+                    description: successfully created
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/notebook'
+                '400':
+                    description: 'Invalid data'
 
 components:
     schemas:
@@ -71,3 +91,13 @@ components:
                     type: string
                     format: password
                     example: ';!@$RF#%asd12'
+        notebook:
+            type: object
+            properties:
+                title:
+                    type: string
+                    example: "Notebook about Brain chemistry"
+                description:
+                    type: string
+                    example: "Everything that I am learning about the brain chemistry I will note them here"
+

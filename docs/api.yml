@@ -73,6 +73,10 @@ paths:
             responses:
                 '204':
                     description: Successfully return a notebook
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/notebook'
                 '404':
                     description: Not found
 

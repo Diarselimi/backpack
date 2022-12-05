@@ -66,6 +66,15 @@ paths:
                                 $ref: '#/components/schemas/notebook'
                 '400':
                     description: 'Invalid data'
+    /notebooks/{id}:
+        get:
+            summary: Get a notebook by id
+            operationId: getNotebook
+            responses:
+                '204':
+                    description: Successfully return a notebook
+                '404':
+                    description: Not found
 
 components:
     schemas:
